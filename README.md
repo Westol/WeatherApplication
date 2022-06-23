@@ -32,4 +32,4 @@
 * Отрисован главный экран
 
 ## Скриншоты
-<img src="Screenshot_20220619_213427.png" width="440" height="810"/> 
+<img src="Screenshot_20220623_202645.png" width="440" height="810"/> 
