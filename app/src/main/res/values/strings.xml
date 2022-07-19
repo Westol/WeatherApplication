@@ -4,5 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hours">Часы</string>
     <string name="days">Дни</string>
+    <string name="empty">Пусто</string>
 
 </resources>
