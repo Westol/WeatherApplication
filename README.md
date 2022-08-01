@@ -32,6 +32,7 @@
 * Отрисован главный экран
 * Созданы фрагменты Hours и Days
 * Создан data class и разметка list_item
+* Добавлен RecyclerView Adapter
 
 ## Скриншоты
-<img src="Screenshot_20220623_202645.png" width="440" height="810"/> 
+<img src="Screenshot_20220719_124038.png" width="440" height="810"/> 
