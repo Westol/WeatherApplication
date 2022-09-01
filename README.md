@@ -33,6 +33,7 @@
 * Созданы фрагменты Hours и Days
 * Создан data class и разметка list_item
 * Добавлен RecyclerView Adapter
+* Парсинг данных полученных с API
 
 ## Скриншоты
 <img src="Screenshot_20220719_124038.png" width="440" height="810"/> 
