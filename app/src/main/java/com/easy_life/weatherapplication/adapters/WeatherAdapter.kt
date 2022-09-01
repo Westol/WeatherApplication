@@ -8,16 +8,26 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.easy_life.weatherapplication.R
 import com.easy_life.weatherapplication.databinding.ListItemBinding
+import com.squareup.picasso.Picasso
 
-class WeatherAdapter : ListAdapter<WeatherModel,WeatherAdapter.Holder>(Comparator()) {
+class WeatherAdapter(val listener: Listener?) : ListAdapter<WeatherModel,WeatherAdapter.Holder>(Comparator()) {
 
-    class Holder(view: View) : RecyclerView.ViewHolder(view){
+    class Holder(view: View, val listener: Listener?) : RecyclerView.ViewHolder(view){
         val binding = ListItemBinding.bind(view)
+        var itemTemp: WeatherModel? = null
+
+        init {
+            itemView.setOnClickListener {
+                itemTemp?.let { it1 -> listener?.onClick(it1) }
+            }
+        }
 
         fun bind(item: WeatherModel) = with(binding){
+            itemTemp = item
             tvDate.text = item.time
             tvCondition.text = item.condition
-            tvTemp.text = item.currentTemp
+            tvTemp.text = item.currentTemp.ifEmpty { "${item.maxTemp} / ${item.minTemp}" }
+            Picasso.get().load("https:" + item.imageUrl).into(im)
         }
     }
 
@@ -35,11 +45,15 @@ class WeatherAdapter : ListAdapter<WeatherModel,WeatherAdapter.Holder>(Comparato
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return Holder(view)
+        return Holder(view, listener)
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(getItem(position))
 
+    }
+
+    interface Listener{
+        fun onClick(item: WeatherModel)
     }
 }
