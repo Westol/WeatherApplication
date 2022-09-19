@@ -43,3 +43,4 @@
 ## Скриншоты
 <img src="Screenshot_20220901_225648.png" width="440" height="810"/> <img src="Screenshot_20220901_225657.png" width="440" height="810"/> 
 <img src="Screenshot_20220919_113156.png" width="440" height="810"/> <img src="Screenshot_20220919_113213.png" width="440" height="810"/> 
+<img src="Screenshot_20220919_113725.png" width="440" height="810"/> 
